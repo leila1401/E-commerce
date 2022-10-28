@@ -22,7 +22,7 @@ public class Product {
 //                    @JoinColumn(name = "image_id")
 //            }
 //    )
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<ImageModel> productImages;
 
     public Integer getProductId() {

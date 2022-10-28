@@ -27,7 +27,7 @@ public class ProductController {
 
    // @PreAuthorize("hasRole('Admin')")
     @PostMapping(value = "/addNewProduct")//, consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-    public Product addNewProduct(@RequestBody @RequestPart Product product,
+    public Product addNewProduct(@ModelAttribute Product product,
                                  @RequestParam("file") MultipartFile[] files){
         try{
             Set<ImageModel> images = uploadImage(files);
