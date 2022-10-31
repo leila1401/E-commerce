@@ -14,6 +14,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
 @RestController
 public class ProductController {
 
@@ -26,8 +28,10 @@ public class ProductController {
 //    }
 
    // @PreAuthorize("hasRole('Admin')")
-    @PostMapping(value = "/addNewProduct")//, consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-    public Product addNewProduct(@ModelAttribute Product product,
+   //@RequestMapping(path = "/addNewProduct", method = POST, consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
+   @PostMapping(value = "/addNewProduct")//, consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+
+    public Product addNewProduct(@ModelAttribute("product") Product product,
                                  @RequestParam("file") MultipartFile[] files){
         try{
             Set<ImageModel> images = uploadImage(files);
@@ -62,6 +66,13 @@ public class ProductController {
     @DeleteMapping("/deleteProduct/{productId}")
     public void deleteProductDetails(@PathVariable("productId") Integer productId){
         productService.deleteProductDetails(productId);
+    }
+
+    @GetMapping("/getProductDetail/{isSingleProductCheckout}/{productId}")
+    public List<Product> getProductDetail(@PathVariable(name ="isSingleProductCheckout") boolean isSingleProductCheckout,
+                                 @PathVariable(name = "productId")Integer productId){
+
+       return productService.getProductDetail(isSingleProductCheckout, productId);
 
     }
 }

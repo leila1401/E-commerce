@@ -13,6 +13,7 @@ public class ImageModel {
     @Column(length = 50000000)
     private byte[] picByte;
 
+
     public ImageModel() {
     }
 
@@ -53,4 +54,5 @@ public class ImageModel {
     public void setPicByte(byte[] picByte) {
         this.picByte = picByte;
     }
+
 }
