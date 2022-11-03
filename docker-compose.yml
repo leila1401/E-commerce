@@ -1,0 +1,17 @@
+version: "3"
+services:
+  ecommercedb:
+    image: "mysql:5.6"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: jwt_db
+      MYSQL_USER: sa
+      MYSQL_PASSWORD: password
+  ecommerce:
+    image: "ecommerce"
+    ports:
+      - "9090:9090"
+    depends_on:
+      - ecommercedb
