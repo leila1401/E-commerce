@@ -18,7 +18,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
 href="file:///C:\Users\Admin\AppData\Local\Temp\msohtmlclip1\01\clip.htm">
 <link rel=File-List
 href="file:///C:\Users\Admin\AppData\Local\Temp\msohtmlclip1\01\clip_filelist.xml">
-<style>
+
 <!--table
 	{mso-displayed-decimal-separator:"\.";
 	mso-displayed-thousand-separator:"\,";}
@@ -56,7 +56,7 @@ td
 .xl63
 	{border:.5pt solid windowtext;}
 -->
-</style>
+
 </head>
 
 <body link="#0563C1" vlink="#954F72">
